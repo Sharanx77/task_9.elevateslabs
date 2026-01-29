@@ -65,12 +65,17 @@ body {
 /* Class to show modal via JS */
 .modal-overlay.show { opacity: 1; pointer-events: all; }
 
+
 .floating-form-container {
     background: var(--glass);
-    padding: 40px; width: 400px; border-radius: 15px;
+    padding: 50px; /* Increased padding for more breathing room */
+    width: 550px;  /* Changed from 400px to 550px */
+    border-radius: 15px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.2);
     position: relative;
-    transform: translateY(50px); transition: transform 0.4s ease;
+    transform: translateY(50px); 
+    transition: transform 0.4s ease;
+    max-width: 90%; /* Ensures it fits on mobile screens */
 }
 
 .modal-overlay.show .floating-form-container { transform: translateY(0); }
