@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Sharana Basava | Master Class</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-code-branch"></i> B Sharana Basava
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Curriculum</a></li>
+            <li><a href="#">About Instructor</a></li>
+            <li><a href="#" class="btn-nav" id="navLoginBtn">Login / Register</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="project-badge">Task 9: Web Development Internship</span>
+            
+            <h1>Client-Side Form Validation</h1>
+            
+            <p class="tech-stack">
+                Built with <strong>Vanilla JavaScript</strong>, <strong>Regex Patterns</strong>, and <strong>CSS3</strong>.
+            </p>
+            
+            <p class="author-credit">
+                Designed & Developed by <br>
+                <strong class="highlight-name">B Sharana Basava</strong>
+            </p>
+            
+            <button id="openFormBtn" class="cta-button">
+                <i class="fas fa-play"></i> Launch Live Demo
+            </button>
+        </div>
+    </header>
+
+    <div class="modal-overlay" id="modalOverlay">
+        
+        <div class="floating-form-container">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div class="form-header">
+                <h3><i class="fas fa-id-card"></i> Student Registration</h3>
+                <p>Secure your seat for the next batch.</p>
+            </div>
+
+            <form id="form" novalidate>
+                <div class="form-control">
+                    <label>Student ID</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" placeholder="Create unique ID" autocomplete="off">
+                        <i class="fas fa-check-circle icon-success"></i>
+                        <i class="fas fa-exclamation-circle icon-error"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="student@example.com" autocomplete="off">
+                        <i class="fas fa-check-circle icon-success"></i>
+                        <i class="fas fa-exclamation-circle icon-error"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Strong password">
+                        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strength-bar"></div>
+                    </div>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label>Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirm-password" placeholder="Repeat password">
+                        <i class="fas fa-check-circle icon-success"></i>
+                        <i class="fas fa-exclamation-circle icon-error"></i>
+                    </div>
+                    <small>Error message</small>
+                </div>
+
+                <button type="submit" class="submit-btn">Complete Enrollment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

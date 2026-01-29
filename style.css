@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #6C63FF;
+    --dark: #2f2f2f;
+    --light: #f4f4f4;
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --glass: rgba(255, 255, 255, 0.95);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 50px; position: absolute; width: 100%; top: 0; z-index: 10;
+}
+.logo { font-size: 1.5rem; font-weight: 700; color: #fff; }
+.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: #fff; font-weight: 500; }
+.btn-nav { border: 2px solid #fff; padding: 8px 20px; border-radius: 20px; transition: 0.3s; }
+.btn-nav:hover { background: #fff; color: var(--primary); }
+
+/* HERO SECTION - FULL PAGE BACKGROUND */
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* Dark gradient overlay + image */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.hero-content h1 { font-size: 3.5rem; color: #fff; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; color: #ddd; max-width: 600px; margin: 0 auto 30px; }
+.hero-stats { display: flex; gap: 20px; justify-content: center; color: #bbb; margin-bottom: 40px; }
+
+/* MAIN CTA BUTTON */
+.cta-button {
+    padding: 15px 40px; font-size: 1.2rem; background: var(--primary);
+    color: #fff; border: none; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3); transition: transform 0.3s;
+}
+.cta-button:hover { transform: translateY(-5px); background: #5a52d5; }
+
+/* --- FLOATING MODAL STYLES --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dim background */
+    backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+    
+    /* Animation hooks */
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+
+/* Class to show modal via JS */
+.modal-overlay.show { opacity: 1; pointer-events: all; }
+
+.floating-form-container {
+    background: var(--glass);
+    padding: 40px; width: 400px; border-radius: 15px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    position: relative;
+    transform: translateY(50px); transition: transform 0.4s ease;
+}
+
+.modal-overlay.show .floating-form-container { transform: translateY(0); }
+
+.close-modal {
+    position: absolute; top: 15px; right: 20px; background: none; border: none;
+    font-size: 2rem; cursor: pointer; color: #666;
+}
+.close-modal:hover { color: var(--error); }
+
+.form-header h3 { color: var(--dark); margin-bottom: 5px; }
+.form-header p { color: #666; font-size: 0.9rem; margin-bottom: 25px; }
+
+/* FORM INPUTS */
+.form-control { margin-bottom: 20px; position: relative; }
+.form-control label { font-size: 0.9rem; font-weight: 600; color: #444; margin-bottom: 5px; display: block; }
+.form-control input {
+    width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 0.95rem;
+}
+.form-control input:focus { outline: none; border-color: var(--primary); }
+
+/* VALIDATION STATES */
+.form-control.success input { border-color: var(--success); }
+.form-control.error input { border-color: var(--error); }
+.form-control small { color: var(--error); font-size: 0.75rem; position: absolute; bottom: -18px; left: 0; visibility: hidden; }
+.form-control.error small { visibility: visible; }
+
+.input-wrapper { position: relative; }
+.input-wrapper i { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #aaa; visibility: hidden; }
+.form-control.success .icon-success { visibility: visible; color: var(--success); }
+.form-control.error .icon-error { visibility: visible; color: var(--error); }
+
+.toggle-password { visibility: visible !important; cursor: pointer; z-index: 2; }
+
+/* STRENGTH METER */
+.strength-meter { height: 4px; background: #eee; margin-top: 8px; width: 100%; border-radius: 2px; }
+.strength-bar { height: 100%; width: 0%; transition: 0.3s; }
+
+.submit-btn {
+    width: 100%; padding: 12px; background: var(--dark); color: #fff;
+    border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;
+    margin-top: 10px; transition: 0.3s;
+}
+.submit-btn:hover { background: var(--primary); }
+/* Add/Replace these styles */
+
+.project-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 50px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.tech-stack {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.author-credit {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.highlight-name {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary); /* Subtle underline branding */
+}
