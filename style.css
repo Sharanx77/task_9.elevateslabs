@@ -155,3 +155,19 @@ body {
     font-weight: 600;
     border-bottom: 2px solid var(--primary); /* Subtle underline branding */
 }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content p { font-size: 1.1rem; max-width: 80%; }
+    .floating-form-container { width: 500px; padding: 40px; }
+    .cta-button { padding: 14px 34px; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 15px 24px; position: fixed; top: 0; background: rgba(0,0,0,0.35); width: 100%; }
+    .logo { font-size: 1.2rem; }
+    .nav-links { gap: 18px; }
+    .hero-content h1 { font-size: 2.4rem; margin-bottom: 16px; }
+    .hero-content p { font-size: 1rem; margin-bottom: 20px; }
+    .floating-form-container
